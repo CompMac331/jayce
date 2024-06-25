@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Jayce's World </title>
+</head>
+
+<style>
+    h1 {text-align: center; color: darkslategray;} 
+    h2 {text-align: center; color: darkslategrey;}
+    h3 {text-indent: 10%;}
+    h4 {text-indent: 5%;}
+</style>
+
+<body style = "background-color: wheat;">
+    <h1> Welcome to Jayce's World! </h1>
+    <div style = "text-align: center;">
+        <img src="Attachment.jpg", height="300px", width="250px", style="transform: rotate(180deg);">
+    </div>
+    
+    <p>
+        
+        
+        <h2>About Me!</h2>
+            
+        
+        <br>
+        <div style = "text-align: center;">
+            Hey there! I'm Jayce, a student at Esko High School with a passion for technology and gaming. When I'm not hitting the books, you'll find me diving into code or exploring virtual worlds.
+        </div>
+       
+        <br>
+        <br>
+        
+        <h2>My Interests</h2>
+        <div style="text-indent: 6%;">
+            <img src="openart-image_Tw65z7SM_1719341397980_raw.jpg", height="300",width="300">
+        </div>
+        
+        <br>
+        
+
+        <h3>Programming</h3> I'm always working on sharpening my skills in C++ and Python. There's something thrilling about bringing ideas to life through code.
+        Gaming: I'm a huge fan of video games, especially the Legend of Zelda series. The mix of adventure, puzzles, and storytelling keeps me coming back for more.
+        <br>
+        <br>
+        <h3>Technology</h3> Beyond just gaming and coding, I love keeping up with the latest tech trends and innovations.
+        <br>
+        <br>
+
+        <h3>Projects</h3>
+        
+        Here are some of the coding projects I've been working on: <br> <br>
+
+        <h4>Paper Math</h4>
+        Paper Math is a C++ Program that I Created to Show How Tall a Piece of Paper Would be if you Theoretically Folded it X Ammount of Times
+        <br>
+        <h4>[Name of Python project]</h4> 
+        Explain what this project is about and what you learned while making it.
+        <br>
+        <br>
+        <h2>Gaming Corner</h2>
+        <div style="text-indent: 6%;">
+            <img src="openart-image_npp7W-tU_1719341593752_raw.jpg", height="300",width="300">
+        </div>
+        
+        <h3>Zelda Fan Zone</h3>
+        <h4> My thoughts on The Legend of Zelda; Tears of the Kingdom</h4>
+        [Write a short paragraph about your experience with the most recent Zelda game you've played, what you loved about it, and perhaps what you're looking forward to in future releases]
+        <h2>School Life</h2>
+        <h3>A glimpse into my time at Esko High:</h3>
+
+        <h4>Favorite subjects</h4> 
+        Algebra, Comp App Exploration
+        <h4>Extracurricular activities</h4> 
+        Robotics
+        <h4>Goals</h4> 
+        Graduate and Go to Collage
+
+        <h2>Contacts</h2>
+        <h4>Want to chat about coding, Zelda, or just high school life? Here's how you can reach me</h4>
+        
+        Email: orangepankakes22yt@gmail.com
+        <div style="text-align: center;">
+            <video height="600", width="750" controls>
+                <source src="the spongebobs walk to new york city and then climb the empire state building and take it down-eff069.mp4", type="video/mp4">
+            </video>
+        </div>
+        <canvas id="gameCanvas" width="800" height="400"></canvas>
+    <script>
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Player
+        const player = {
+            x: 50,
+            y: 300,
+            width: 30,
+            height: 50,
+            speed: 5
+        };
+
+        // Ground
+        const ground = {
+            y: 350,
+            height: 50
+        };
+
+        // Blocks
+        const blocks = [
+            {x: 300, y: 250, width: 50, height: 50},
+            {x: 350, y: 250, width: 50, height: 50},
+            {x: 400, y: 250, width: 50, height: 50}
+        ];
+
+        // Game loop
+        function gameLoop() {
+            // Clear canvas
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Draw ground
+            ctx.fillStyle = 'green';
+            ctx.fillRect(0, ground.y, canvas.width, ground.height);
+
+            // Draw player
+            ctx.fillStyle = 'red';
+            ctx.fillRect(player.x, player.y, player.width, player.height);
+
+            // Draw blocks
+            ctx.fillStyle = 'brown';
+            blocks.forEach(block => {
+                ctx.fillRect(block.x, block.y, block.width, block.height);
+            });
+
+            // Move player
+            if (keys.ArrowRight && player.x < canvas.width - player.width) {
+                player.x += player.speed;
+            }
+            if (keys.ArrowLeft && player.x > 0) {
+                player.x -= player.speed;
+            }
+
+            // Request next frame
+            requestAnimationFrame(gameLoop);
+        }
+
+        // Keyboard input
+        const keys = {};
+
+        document.addEventListener('keydown', (e) => {
+            keys[e.code] = true;
+        });
+
+        document.addEventListener('keyup', (e) => {
+            keys[e.code] = false;
+        });
+
+        // Start the game loop
+        gameLoop();
+    </script>
+    </p>
+
+</body>
+
+</html>
+
