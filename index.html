@@ -5,14 +5,62 @@
 </head>
 
 <style>
-    body {background: linear-gradient(45deg, orange, coral);}
+    
     h1 {text-align: center; color: darkslategray;} 
     h2 {text-align: center; color: darkslategrey;}
     h3 {text-indent: 10%;}
     h4 {text-indent: 5%;}
+    .ribbon {
+        position: fixed;
+        top: 0px;
+        width: 100%;
+        background-color: darkslategray;
+        color: white;
+        text-align: center;
+        padding: 30px 0px;
+        z-index: 1000;
+    }
+    .ribbon_container{
+        display: flex;
+        justify-content: left;
+        gap: 10px;
+        margin: 20px 0;
+        
+    }
+    .content {
+        display: none;
+        margin-top: 10px;
+    }
+    .button_container{
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin: 20px 0;
+    }
+    .textexpand {
+        cursor: pointer;
+            color: blue;
+            text-decoration: underline;
+            border: none;
+            background: none;
+            font-size: 16px;
+    }
+    
 </style>
 
 <body">
+    <div class="ribbon">
+        <div class="ribbon_container">
+            <div style="text-indent: 5%;">
+                Jayce's World
+            </div>
+            <button class="button">About Me</button>
+            <button class="button">Games</button>
+            <button class="button">Fan Zone</button>
+        </div>
+    </div>
+    
+    </div>
     <h1> Welcome to Jayce's World! </h1>
     <div style = "text-align: center;">
         <img src="Attachment.jpg", height="300px", width="250px", style="transform: rotate(180deg);">
@@ -33,6 +81,30 @@
         <br>
         
         <h2>My Interests</h2>
+        <div>
+            <button class="textexpand" onclick="toggleContent()">Click to Show</button>
+            <div id="content1" class="content">
+                <p>
+                    Programming I'm always working on sharpening my skills in C++ and Python. There's something thrilling about bringing ideas to life through code.
+                    Gaming: I'm a huge fan of video games, especially the Legend of Zelda series. The mix of adventure, puzzles, and storytelling keeps me coming back for more.
+        
+        
+                    Technology Beyond just gaming and coding, I love keeping up with the latest tech trends and innovations.
+        
+        
+
+                    Projects
+        
+                    Here are some of the coding projects I've been working on:
+
+                    Paper Math
+                    Paper Math is a C++ Program that I Created to Show How Tall a Piece of Paper Would be if you Theoretically Folded it X Ammount of Times
+        
+                    [Name of Python project]
+                    Explain what this project is about and what you learned while making it.
+                </p>
+            </div>
+        </div>
         <div style="text-indent: 6%;">
             <img src="openart-image_Tw65z7SM_1719341397980_raw.jpg", height="300",width="300">
         </div>
@@ -40,23 +112,7 @@
         <br>
         
 
-        <h3>Programming</h3> I'm always working on sharpening my skills in C++ and Python. There's something thrilling about bringing ideas to life through code.
-        Gaming: I'm a huge fan of video games, especially the Legend of Zelda series. The mix of adventure, puzzles, and storytelling keeps me coming back for more.
-        <br>
-        <br>
-        <h3>Technology</h3> Beyond just gaming and coding, I love keeping up with the latest tech trends and innovations.
-        <br>
-        <br>
-
-        <h3>Projects</h3>
         
-        Here are some of the coding projects I've been working on: <br> <br>
-
-        <h4>Paper Math</h4>
-        Paper Math is a C++ Program that I Created to Show How Tall a Piece of Paper Would be if you Theoretically Folded it X Ammount of Times
-        <br>
-        <h4>[Name of Python project]</h4> 
-        Explain what this project is about and what you learned while making it.
         <br>
         <br>
         <h2>Gaming Corner</h2>
@@ -86,10 +142,26 @@
                 <source src="the spongebobs walk to new york city and then climb the empire state building and take it down-eff069.mp4", type="video/mp4">
             </video>
         </div>
-       
-    <button class="button" onclick="window.location.href='scratchgame.html'">Zelda Scratch</button>
-    <button class="button" onclick="window.location.href='gameA.html'">1942</button>
+    <div class="button_container">
+        <button class="button" onclick="window.location.href='scratchgame.html'">Zelda Scratch</button>
+        <button class="button" onclick="window.location.href='gameA.html'">1942</button>
+    </div>   
+    
     </p>
+    <script>
+         function toggleContent() {
+            var content = document.getElementById('content1');
+            var button = document.querySelector('.textexpand');
+
+            if (content.style.display === "none" || content.style.display === "") {
+                content.style.display = "block";
+                button.textContent = "Hide Text";
+            } else {
+                content.style.display = "none";
+                button.textContent = "Show Text";
+            }
+        }
+    </script>
 
 </body>
 
